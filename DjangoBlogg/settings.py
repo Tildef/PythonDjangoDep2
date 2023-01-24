@@ -11,6 +11,7 @@ https://docs.djangoproject.com/en/4.1/ref/settings/
 """
 
 from pathlib import Path
+from sre_constants import CATEGORY_UNI_SPACE
 
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -26,17 +27,17 @@ SECRET_KEY = 'django-insecure-dzva$k_a5z(hn)26vl*uyoq68ooaa!n!$s2t8$yrhtjzb7qzgt
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['*']
+ALLOWED_HOSTS = ['web-production-b86e.up.railway.app', '127.0.0.1']
 #'http://localhost:8000/','127.0.0.1:8000'
-CSRF_TRUSTED_ORIGINS = ['https://localhost:8000/']
+CSRF_TRUSTED_ORIGINS = ['https://web-production-b86e.up.railway.app']
 
 # Application definition
 
 INSTALLED_APPS = [
-    'anvandare.apps.AnvandareConfig',
     'blogg.apps.BloggConfig',
-    'crispy_forms',
+    'anvandare.apps.AnvandareConfig',
     'django.contrib.admin',
+    'crispy_forms',
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
@@ -46,7 +47,7 @@ INSTALLED_APPS = [
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
-    "whitenoise.middleware.WhiteNoiseMiddleware",
+    'whitenoise.middleware.WhiteNoiseMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
@@ -109,9 +110,9 @@ AUTH_PASSWORD_VALIDATORS = [
 # Internationalization
 # https://docs.djangoproject.com/en/4.1/topics/i18n/
 
-LANGUAGE_CODE = 'sv-eu'
+LANGUAGE_CODE = 'sv'
 
-TIME_ZONE = 'Europe/Helsinki'
+TIME_ZONE = 'Europe/Mariehamn'
 
 USE_I18N = True
 
@@ -121,7 +122,7 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.1/howto/static-files/
 
-STATIC_URL = 'static/'
+STATIC_URL = '/static/'
 STATICFILES_DIRS = [BASE_DIR/'static']
 
 STATIC_ROOT = BASE_DIR / "staticfiles"
